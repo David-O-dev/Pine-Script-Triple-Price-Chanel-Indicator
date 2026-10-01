@@ -1,0 +1,38 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © Gradation0
+
+//@version=6
+indicator("Triple Price Channel", overlay = true, precision = 5)
+
+//PC 1
+PClength1 = input(9, group = "PC 1")
+offsetlength1 = input(0, group = "PC 1")
+PCColor1 = input.color(defval = color.black, title = "Price Channel 1 Color", group = "PC 1")
+
+highprice1 = ta.highest(high, PClength1)
+lowprice1 = ta.lowest(low, PClength1)
+centerline1 = (ta.highest(high, PClength1) +  ta.lowest(low, PClength1)) / 2
+plot(highprice1, color=PCColor1, title="Highprice Line 1", offset=offsetlength1, linewidth = 4)
+plot(lowprice1, color=PCColor1, title="Lowprice Line 1", offset=offsetlength1, linewidth = 4)
+
+//PC 2
+PClength2 = input(26, group = "PC 2")
+offsetlength2 = input(0, group = "PC 2")
+PCColor2 = input.color(defval = color.gray, title = "Price Channel 2 Color", group = "PC 2")
+
+highprice2 = ta.highest(high, PClength2)
+lowprice2 = ta.lowest(low, PClength2)
+centerline2 = (ta.highest(high, PClength2) +  ta.lowest(low, PClength2)) / 2
+plot(highprice2, color=PCColor2, title="Highprice Line 2", offset=offsetlength1, linewidth = 4)
+plot(lowprice2, color=PCColor2, title="Lowprice Line 2", offset=offsetlength1, linewidth = 4)
+
+//PC 3
+PClength3 = input(52, group = "PC 3")
+offsetlength3 = input(0, group = "PC 3")
+PCColor3 = input.color(defval = color.green, title = "Price Channel 3 Color", group = "PC 3")
+
+highprice3 = ta.highest(high, PClength3)
+lowprice3 = ta.lowest(low, PClength3)
+centerline3 = (ta.highest(high, PClength3) +  ta.lowest(low, PClength3)) / 2
+plot(highprice3, color=PCColor3, title="Highprice Line 3", offset=offsetlength3, linewidth = 4)
+plot(lowprice3, color=PCColor3, title="Lowprice Line 3", offset=offsetlength3, linewidth = 4)
